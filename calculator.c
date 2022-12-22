@@ -5,8 +5,8 @@
 
 int main(void)
 {
-	char * math_problem = (char *) malloc(101);
-	char * operator;
+	char* math_problem = (char*) malloc(101);
+	char* operator;
 
 	printf("Arithmetics Local Library: (Addition, Subtraction, Multiplication, Division)\n");
 	printf("Input: ");
@@ -21,9 +21,9 @@ int main(void)
 		operator = strchr(operator + 1, '+');
 	}
 
-	char * pointer;
+	char* pointer;
 	int position = 0;
-	long int * numbers = (long int *) malloc(100);
+	long int* numbers = (long int*) malloc(100);
 	numbers[position++] = strtol(math_problem, &pointer, 10);
 	while (*pointer)
 	{
@@ -43,4 +43,9 @@ int main(void)
 	{
 		printf("numbers[%d] = %ld", i, numbers[i]);
 	}
+
+	free(math_problem);
+	free(numbers);
+
+	return 0;
 }
